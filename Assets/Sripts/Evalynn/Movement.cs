@@ -31,6 +31,7 @@ public class Movement : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log("moveto point");
         Instantiate(moveTarget, transform.position, Quaternion.identity);
     }
 
