@@ -40,7 +40,7 @@ public class projectileLine : MonoBehaviour
             //when _poi is set to a new value, it reset everything
             if(_poi != null) 
             {
-                line.enabled = true;
+                line.enabled = false;
                 points = new List<Vector3> ();
                 AddPoint();
             }
@@ -82,7 +82,7 @@ public class projectileLine : MonoBehaviour
             
             line.positionCount = points.Count;
             line.SetPosition(points.Count - 1, lastPoint);
-            line.enabled = false;
+            line.enabled = true;
         }
     }
     //returns the location of the most recently added point
@@ -120,6 +120,7 @@ public class projectileLine : MonoBehaviour
                 if (FollowCam.Instance.poi.tag == "projectile")
                 {
                     poiProperty = FollowCam.Instance.poi;
+                    Debug.Log("POI RESET");
                 }
                 else
                 {
