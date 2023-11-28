@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 
 /// <summary>
 /// Follow Cam
@@ -38,6 +39,11 @@ public class FollowCam : MonoBehaviour
         Instance = this;
         camZ = this.transform.position.z;
     }
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -47,6 +53,8 @@ public class FollowCam : MonoBehaviour
 
         //get position of poi (the thing I want to follow)
         Vector3 destination = poi.transform.position;
+        //retain the destination z value
+        destination.z = camZ;
 
         //Limit cams x and y
         destination.x = Mathf.Max(minXY.x, destination.x);
@@ -64,4 +72,8 @@ public class FollowCam : MonoBehaviour
         //Set orthographic size to keep the ground in view. Camera size will scale based on the height of the camera
         GetComponent<Camera>().orthographicSize = destination.y + 10f;
     }
+
+    //had questions to get this working but needed to leae to make it to next class on time
+
+
 }
