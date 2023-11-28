@@ -12,9 +12,10 @@ public class Slingshot : MonoBehaviour
     public bool aimingMode;
 
     public float velocityMult = 4f;
-
+    public static Slingshot Instance;
     private void Awake()
     {
+        Instance = this;
         Transform launchPointTrans = transform.Find("launchPoint");
         launchPoint = launchPointTrans.gameObject;
         if(launchPoint == null)
@@ -22,26 +23,19 @@ public class Slingshot : MonoBehaviour
             Debug.LogWarning("SlingShot.Awake launchPoint is null");
         }
         launchPoint.SetActive(false);
-        launchPos = launchPointTrans.position;
-<<<<<<< HEAD
-=======
-        
+        launchPos = launchPointTrans.position;        
     }
 
-    private void Update()
-    {
-        mouseDetection();
-    }
+    
     private void OnMouseEnter()
     {
         launchPoint.SetActive(true);
         print("Mouse entered");
     
->>>>>>> Out-of-Combat-States
     }
-
     private void Update()
     {
+        mouseDetection();
         //if slingshot is not in aimingmode, dont run this code
         if (!aimingMode) return;
 
@@ -58,7 +52,7 @@ public class Slingshot : MonoBehaviour
 
         //limit mouseDelta to the radius of the slingshot sphere collider
         float maxMagnitude = this.GetComponent<SphereCollider>().radius;
-        if(mouseDelta.magnitude > maxMagnitude)
+        if (mouseDelta.magnitude > maxMagnitude)
         {
             mouseDelta.Normalize();
             mouseDelta *= maxMagnitude;
@@ -83,7 +77,9 @@ public class Slingshot : MonoBehaviour
             //now forget that projectile, so we can shoot another.
             projectile = null;
         }
+
     }
+   
 
     private void OnMouseDown()
     {
@@ -100,20 +96,15 @@ public class Slingshot : MonoBehaviour
         projectile.GetComponent<Rigidbody>().isKinematic = true;
     }
 
-    private void OnMouseEnter()
-    {
-        //Debug.Log("Slingshot.OnMouseEnter");
-        launchPoint.SetActive(true);
+    
 
-    }
 
-<<<<<<< HEAD
     private void OnMouseExit()
     {
         //Debug.Log("Slingshot.OnMouseExit");
         launchPoint.SetActive(false);
     }
-=======
+
     private void mouseDetection()
     {
         //if the slingshot is now in aiming mode dont run this code
@@ -150,5 +141,5 @@ public class Slingshot : MonoBehaviour
         }
     }
 
->>>>>>> Out-of-Combat-States
+
 }
