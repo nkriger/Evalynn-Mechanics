@@ -5,7 +5,7 @@ using UnityEngine;
 public class MouseAiming : MonoBehaviour
 {
 
-    Physics.Raycast(Ray, 100, mask);
+    //Physics.Raycast(Ray, 100, mask);
     // Start is called before the first frame update
     void Start()
     {
