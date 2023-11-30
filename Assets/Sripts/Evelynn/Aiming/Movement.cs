@@ -20,11 +20,13 @@ public class Movement : MonoBehaviour
 
     [SerializeField]public List<Vector3> movePoints = new List<Vector3>();
     [SerializeField] public List<GameObject> moveTargetList = new List<GameObject>();
+
+    public static Movement instance;
     // Start is called before the first frame update
     void Start()
     {
         currentMoveTarget = transform.position;
-
+        instance = this;
     }
     
 

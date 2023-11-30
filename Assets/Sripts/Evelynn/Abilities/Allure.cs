@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.Pipes;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -11,18 +12,11 @@ public class Allure : AbilitySO
     public GameObject AllureT2;
 
     public GameObject AllureTarget;
-    
 
 
-    // Start is called before the first frame update
-    void Start()
+
+    public override void Activate()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("Allure");
     }
 }

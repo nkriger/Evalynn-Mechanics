@@ -13,8 +13,12 @@ public class AbilityParent : MonoBehaviour
     }
     AbilityState state = AbilityState.Ready;
 
+    public List<AbilitySO> ability;
 
-    public AbilitySO ability;
+   
+
+    
+
     public int ManaCost;
     public float cooldownTime;
     float activeTime;
@@ -23,7 +27,7 @@ public class AbilityParent : MonoBehaviour
     public float castRange;
     public int damage;
     
-    public KeyCode abilityKey;
+    
 
     public void Start()
     {
@@ -32,17 +36,33 @@ public class AbilityParent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //abilityStates();
+        activateAbility();
+    }
+
+    void activateAbility()
+    {
+        for (int i = 0; i < ability.Count; i++)
+        {
+            if (Input.GetKeyDown(ability[i].abilityKey))
+            {
+                abilityStates(ability[i]);
+            }
+        }
+    }
+
+    void abilityStates(AbilitySO ability)
+    {
         switch (state)
         {
             case AbilityState.Ready:
-                if (Input.GetKeyDown(abilityKey))
-                {
-                    Debug.Log("Ability Activated");
-                    ability.Activate(gameObject);
-                    state = AbilityState.Casting;
-                    //cast ability StartCoroutine(Cast());
-                    activeTime = ability.activeTime;
-                }
+               
+                 Debug.Log("Ability Activated");
+                 ability.Activate();
+                 state = AbilityState.Casting;
+                 //cast ability StartCoroutine(Cast());
+                 activeTime = ability.activeTime;
+                
                 break;
             case AbilityState.Casting:
                 if (activeTime > 0)

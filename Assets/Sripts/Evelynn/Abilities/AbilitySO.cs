@@ -9,12 +9,13 @@ public class AbilitySO : ScriptableObject
     public new string AbilityName;
     public float activeTime;
     public float castTime;
-    public Movement move;
+    
     public Vector3 AbilityTarget;
+    public KeyCode abilityKey;
 
     void Start()
     {
-        if (move != null)
+        if (Movement.instance != null)
         {
             UpdateAbilityTarget();
             Debug.Log("move is not null");
@@ -24,9 +25,9 @@ public class AbilitySO : ScriptableObject
     public void UpdateAbilityTarget()
     {
         //Update the target to always match currentMoveTarget
-        AbilityTarget = move.mousePos;
+        AbilityTarget = Movement.instance.mousePos;
     }
-    public virtual void Activate(GameObject parent)
+    public virtual void Activate()
     {
 
     }

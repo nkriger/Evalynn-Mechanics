@@ -4,7 +4,10 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - ability: {fileID: 11400000, guid: 27084cf91c72b854b8da3a83c365fbde, type: 2}
+  - Q: {fileID: 11400000, guid: 27084cf91c72b854b8da3a83c365fbde, type: 2}
+  - W: {fileID: 11400000, guid: f5f0b3c9836f57c41b881a350c8a31d9, type: 2}
+  - E: {instanceID: 0}
+  - R: {instanceID: 0}
   - abilityTarget: {fileID: 3255799829976538786, guid: 6bf900cb01b0c2a4ebec3d4c3929829d,
       type: 3}
   executionOrder: 0

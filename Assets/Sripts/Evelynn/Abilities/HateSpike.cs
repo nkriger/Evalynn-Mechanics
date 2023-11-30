@@ -11,7 +11,7 @@ public class HateSpike : AbilitySO
     public GameObject SpikePrefab;
     public Vector3 SpikeDirection;
     
-    public override void Activate(GameObject SpikePrefab)
+    public override void Activate()
     {
         UpdateAbilityTarget();
         Instantiate(SpikePrefab, SpikePrefab.transform.position, SpikePrefab.transform.rotation);
