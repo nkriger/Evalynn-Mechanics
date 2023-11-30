@@ -1,6 +1,7 @@
 using System.CodeDom.Compiler;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -37,6 +38,12 @@ public class Movement : MonoBehaviour
         mouseTracking();
         SetLocation();
     }
+
+    private void FixedUpdate()
+    {
+        //moveToTarget();
+
+    }
     private void mouseTracking()
     {
         mousePos = Mouse.current.position.ReadValue();
@@ -55,6 +62,7 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            //Destroy(moveTargetList[0]);
             movePoints.Clear();
             moveTargetList.Clear();
             Debug.Log("moveto point");
@@ -71,4 +79,26 @@ public class Movement : MonoBehaviour
             
         }
     }
+    public void MovePlayerToTarget(float duration)
+    {
+        StartCoroutine(MoveCoroutine(duration));
+    }
+
+    private IEnumerator MoveCoroutine(float duration)
+    {
+        Vector3 startPosition = Player.transform.position;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            Player.transform.position = Vector3.Lerp(startPosition, currentMoveTarget, t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the player reaches the exact target position
+        Player.transform.position = currentMoveTarget;
+    }
+
 }
