@@ -9,7 +9,8 @@ public class AbilitySO : ScriptableObject
     public new string AbilityName;
     public float activeTime;
     public float castTime;
-    
+    public Vector3 playerPos;
+
     public Vector3 AbilityTarget;
     public KeyCode abilityKey;
 
@@ -30,6 +31,10 @@ public class AbilitySO : ScriptableObject
     public virtual void Activate()
     {
 
+    }
+    void Update()
+    {
+        playerPos = EvalynnStats.playerPos;
     }
 
     

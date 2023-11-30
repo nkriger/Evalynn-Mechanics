@@ -8,13 +8,14 @@ using UnityEngine.InputSystem.XR.Haptics;
 public class HateSpike : AbilitySO
 {
     public float SpikeSpeed;
+    
     public GameObject SpikePrefab;
     public Vector3 SpikeDirection;
     
     public override void Activate()
     {
         UpdateAbilityTarget();
-        Instantiate(SpikePrefab, SpikePrefab.transform.position, SpikePrefab.transform.rotation);
+        Instantiate(SpikePrefab, player, );
         SpikeDirection = AbilityTarget - SpikePrefab.transform.position;
     }
 }

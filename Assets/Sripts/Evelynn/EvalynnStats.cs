@@ -13,9 +13,12 @@ public class EvalynnStats : MonoBehaviour
     public Vector3 target;
    // public Vector3 currentRot;
     public Movement move;  // Declare the Movement variable at the class level
+    public static Vector3 playerPos;
+    public static Vector3 playerRot;
 
     void Start()
     {
+        
         //move = GetComponent<Movement>();
         if (move != null)
         {
@@ -28,7 +31,8 @@ public class EvalynnStats : MonoBehaviour
 
     void Update()
     {
-
+        playerPos = transform.position;
+        playerRot = transform.rotation;
         // Only update the target if currentMoveTarget changes
         if (move != null)
         {
@@ -40,14 +44,9 @@ public class EvalynnStats : MonoBehaviour
         float targetZ = target.z;
         Vector3 targetPosition = new Vector3(targetX, transform.position.y, targetZ);
 
-        Vector3 direction = new Vector3(targetPosition.x - transform.position.x, targetPosition.z - transform.position.z, 0);
-        //currentRot = direction;
-        
-        
-        //move to the new target position
-
-        /////Old system abandond for new face the point system
-        //transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+        //look at and move to new directions
+        transform.LookAt(targetPosition);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
         // Call the moveToPoint method if needed
         //moveToPoint();

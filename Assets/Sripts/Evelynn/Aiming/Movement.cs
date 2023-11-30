@@ -22,6 +22,7 @@ public class Movement : MonoBehaviour
     [SerializeField] public List<GameObject> moveTargetList = new List<GameObject>();
 
     public static Movement instance;
+    
     // Start is called before the first frame update
     void Start()
     {

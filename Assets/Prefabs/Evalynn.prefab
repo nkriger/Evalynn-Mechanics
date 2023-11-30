@@ -167,7 +167,7 @@ Transform:
   m_GameObject: {fileID: 7769979832753180352}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.261506, y: 2.6, z: -6.44}
+  m_LocalPosition: {x: 0, y: 2.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -262,9 +262,8 @@ MonoBehaviour:
   abilityType: 0
   combatState: 0
   passive: 0
-  ManaCost: 0
-  cooldown: 0
   outOfCombatTimer: 4
+  outOfCombatTimerActive: 0
 --- !u!114 &2193988950471028355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,3 +281,5 @@ MonoBehaviour:
   moveSpeed: 40
   AbilityPower: 100
   cooldownReduction: 0.2
+  target: {x: 0, y: 0, z: 0}
+  move: {fileID: 0}

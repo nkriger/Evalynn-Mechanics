@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Hate Spike
   m_EditorClassIdentifier: 
   AbilityName: Hate Spike
-  activeTime: 0
-  castTime: 0
-  move: {fileID: 0}
-  AbilityTarget: {x: 0, y: 0, z: 0}
+  activeTime: 4
+  castTime: 0.6
+  player: {fileID: 0}
+  AbilityTarget: {x: -2.3820956, y: 1.7132411, z: -9.623632}
   abilityKey: 113
-  SpikeSpeed: 0
+  SpikeSpeed: 5
   SpikePrefab: {fileID: 1761982028350995832, guid: 090d181a067535a4e83c6573c1064b16,
     type: 3}
-  SpikeDirection: {x: 0, y: 0, z: 0}
+  SpikeDirection: {x: 0.83506465, y: 1.7132411, z: -11.792441}
