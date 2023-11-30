@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Apple;
 using UnityEngine.UIElements.Experimental;
 
 /// <summary>
@@ -32,6 +33,7 @@ public class FollowCam : MonoBehaviour
 
     //limit for x and y values
     public Vector2 minXY;
+    
 
     //initialize our Singleton
     private void Awake()
@@ -48,11 +50,27 @@ public class FollowCam : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Vector3 destination;
         //lets not run this unless we have to
-        if (poi == null) return;
+        if (poi == null)
+        {
+            destination = Vector3.zero;
+
+        }
+        else
+        {
+            destination = poi.transform.position;
+            if (poi.tag == "projectile")
+            {
+                if (poi.GetComponent<Rigidbody>().IsSleeping())
+                {
+                    poi = null;
+                }
+            }
+        } 
 
         //get position of poi (the thing I want to follow)
-        Vector3 destination = poi.transform.position;
+        
         //retain the destination z value
         destination.z = camZ;
 
