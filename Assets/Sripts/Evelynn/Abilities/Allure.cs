@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EvalynnStats : MonoBehaviour
+[CreateAssetMenu]
+public class Allure : AbilitySO
 {
-    public int health = 100;
-    public int mana = 100;
-    public int moveSpeed = 40;
-    public int AbilityPower = 100;
-    public float cooldownReduction = 0.2f;
+
+    public float AllureT2Timer;
+    public GameObject AllureT1;
+    public GameObject AllureT2;
+
+    public GameObject AllureTarget;
+    
 
 
     // Start is called before the first frame update
@@ -22,7 +25,4 @@ public class EvalynnStats : MonoBehaviour
     {
         
     }
-
-
-
 }
