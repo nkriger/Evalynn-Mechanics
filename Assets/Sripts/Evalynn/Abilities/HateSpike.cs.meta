@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 92be94fc353a2a247955eff3b7a5c81b
+guid: f04b5080b11f7644db60614721139547
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - ability: {fileID: 11400000, guid: 27084cf91c72b854b8da3a83c365fbde, type: 2}
-  - abilityTarget: {fileID: 3255799829976538786, guid: 6bf900cb01b0c2a4ebec3d4c3929829d,
+  - move: {instanceID: 0}
+  - SpikePrefab: {fileID: 1761982028350995832, guid: 090d181a067535a4e83c6573c1064b16,
       type: 3}
   executionOrder: 0
   icon: {instanceID: 0}

@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
 
     [SerializeField] public GameObject Player;
 
-    [SerializeField] public Vector3 currentMoveTarget;
+    public Vector3 currentMoveTarget;
     [SerializeField] public GameObject moveTarget;
     [SerializeField] public Vector3 mousePos;
     [SerializeField] public Vector3 worldPosition;
@@ -23,14 +23,10 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        
+        currentMoveTarget = transform.position;
 
     }
-    private void Awake()
-    {
-        //Transform PlayerTrans = transform.Find("Evalynn");
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -60,7 +56,7 @@ public class Movement : MonoBehaviour
     
     private void SetLocation()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             //Destroy(moveTargetList[0]);
             movePoints.Clear();
@@ -76,7 +72,6 @@ public class Movement : MonoBehaviour
                 //Destroy(currentMoveTarget); // Destroy the existing object
             }
             //generate a list to ad
-            
         }
     }
     public void MovePlayerToTarget(float duration)
@@ -96,9 +91,9 @@ public class Movement : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
         // Ensure the player reaches the exact target position
         Player.transform.position = currentMoveTarget;
     }
 
+    
 }
