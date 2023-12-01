@@ -32,7 +32,7 @@ public class AbilityController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("start");
+        //Debug.Log("start");
         abilityType = AbilityType.nuetral;
         combatState = CombatState.OutOfCombat;
     }
@@ -69,7 +69,7 @@ public class AbilityController : MonoBehaviour
     {
         if (combatState == CombatState.leavingCombat)
         {
-            Debug.Log("leaving combat");
+            //Debug.Log("leaving combat");
             startLeavingCombat();
         }
     }
@@ -81,7 +81,7 @@ public class AbilityController : MonoBehaviour
         {        
             if (outOfCombatTimerActive == false)
             {
-                Debug.Log("out of combat");
+                //Debug.Log("out of combat");
                 outOfCombatTimerActive = true;
                 exitingCoroutine = StartCoroutine(exitingCombat());
                 
@@ -104,7 +104,7 @@ public class AbilityController : MonoBehaviour
 
     IEnumerator exitingCombat()
     {
-            Debug.Log("leaving combat");
+            //Debug.Log("leaving combat");
             yield return new WaitForSeconds(outOfCombatTimer);
             combatState = CombatState.OutOfCombat;    
     }
@@ -113,7 +113,7 @@ public class AbilityController : MonoBehaviour
         if (combatState == CombatState.OutOfCombat)
         {
             passive = true;
-            Debug.Log("passive triggered");
+            //Debug.Log("passive triggered");
         }
         else
         {

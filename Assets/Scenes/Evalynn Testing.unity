@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17427137, g: 0.21794069, b: 0.3001566, a: 1}
+  m_IndirectSpecularColor: {r: 0.17427178, g: 0.21794151, b: 0.30015755, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1790,7 +1790,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 27084cf91c72b854b8da3a83c365fbde, type: 2}
   - {fileID: 11400000, guid: f5f0b3c9836f57c41b881a350c8a31d9, type: 2}
   ManaCost: 0
-  cooldownTime: 5
+  cooldownTime: 3
+  activeTime: 1
   abilityTarget: {fileID: 3255799829976538786, guid: 6bf900cb01b0c2a4ebec3d4c3929829d,
     type: 3}
   castRange: 0
@@ -2559,6 +2560,11 @@ PrefabInstance:
       propertyPath: move
       value: 
       objectReference: {fileID: 144272586}
+    - target: {fileID: 2193988950471028355, guid: 53f9c6ac3d9053e42a4615ca5aa05a55,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1439573522}
     - target: {fileID: 2193988950471028355, guid: 53f9c6ac3d9053e42a4615ca5aa05a55,
         type: 3}
       propertyPath: moveSpeed

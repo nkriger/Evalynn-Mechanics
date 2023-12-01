@@ -15,19 +15,32 @@ public class AbilityParent : MonoBehaviour
 
     public List<AbilitySO> ability;
 
-   
 
-    
+    //public AbilityState State { get; private set; } = AbilityState.Ready;
+    /// <summary>
+    /// public float ActiveTime { get; private set; }
+    /// </summary>
+    ///public float CooldownTime { get; private set; }
+
 
     public int ManaCost;
     public float cooldownTime;
-    float activeTime;
+    public float activeTime;
     public GameObject abilityTarget;
    
     public float castRange;
     public int damage;
-    
-    
+
+    public void Activate()
+    {
+        if (state == AbilityState.Ready)
+        {
+            // Your activation code here...
+
+            state = AbilityState.Casting;
+            //ActiveTime = activeTime;
+        }
+    }
 
     public void Start()
     {
@@ -36,22 +49,28 @@ public class AbilityParent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //abilityStates();
         activateAbility();
+
     }
 
     void activateAbility()
     {
         for (int i = 0; i < ability.Count; i++)
         {
+            ability[i].Update();
+
             if (Input.GetKeyDown(ability[i].abilityKey))
             {
-                abilityStates(ability[i]);
+                ability[i].Activate();
             }
+
+            abilityStates(ability[i]); 
         }
     }
 
-    void abilityStates(AbilitySO ability)
+     void abilityStates(AbilitySO ability)
     {
         switch (state)
         {
@@ -65,8 +84,10 @@ public class AbilityParent : MonoBehaviour
                 
                 break;
             case AbilityState.Casting:
+                Debug.Log("Ability started Cast");
                 if (activeTime > 0)
                 {
+                    Debug.Log("Ability Casting");
                     activeTime -= Time.deltaTime;
                 }
                 else
@@ -78,10 +99,12 @@ public class AbilityParent : MonoBehaviour
             case AbilityState.Cooldown:
                 if (cooldownTime > 0)
                 {
+                    Debug.Log("Ability on Cooldown");
                     cooldownTime -= Time.deltaTime;
                 }
                 else
                 {
+                    Debug.Log("Ability Ready");
                     state = AbilityState.Ready;
                 }
                 break;

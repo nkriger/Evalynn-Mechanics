@@ -5,17 +5,31 @@ using UnityEngine.UIElements;
 
 public class EvalynnStats : MonoBehaviour
 {
+    public static EvalynnStats instance;
+
     public int health = 100;
     public int mana = 100;
     public int moveSpeed = 5;
     public int AbilityPower = 100;
     public float cooldownReduction = 0.2f;
     public Vector3 target;
-   // public Vector3 currentRot;
+    // public Vector3 currentRot;
+    public GameObject player;
     public Movement move;  // Declare the Movement variable at the class level
-    public static Vector3 playerPos;
-    public static Vector3 playerRot;
+    public  Vector3 playerPos;
+    public  Quaternion playerRot;
 
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of EvalynnStats found!");
+            return;
+        }
+
+        instance = this;
+    }
     void Start()
     {
         

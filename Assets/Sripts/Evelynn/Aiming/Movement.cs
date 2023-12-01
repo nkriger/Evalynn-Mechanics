@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
     [SerializeField] public LayerMask layersToHit;
 
     [SerializeField]public List<Vector3> movePoints = new List<Vector3>();
-    [SerializeField] public List<GameObject> moveTargetList = new List<GameObject>();
+    [SerializeField]public List<GameObject> moveTargetList = new List<GameObject>();
 
     public static Movement instance;
     
