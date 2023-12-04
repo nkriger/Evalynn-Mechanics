@@ -41,7 +41,6 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         //moveToTarget();
-
     }
     private void mouseTracking()
     {
@@ -70,13 +69,10 @@ public class Movement : MonoBehaviour
             movePoints.Add(mousePos);
             moveTargetList.Add(moveTarget);
             currentMoveTarget = movePoints[0];
-            if (currentMoveTarget != null)
-            {
-                //Destroy(currentMoveTarget); // Destroy the existing object
-            }
-            //generate a list to ad
+           
         }
     }
+    /*
     public void MovePlayerToTarget(float duration)
     {
         StartCoroutine(MoveCoroutine(duration));
@@ -97,6 +93,21 @@ public class Movement : MonoBehaviour
         // Ensure the player reaches the exact target position
         Player.transform.position = currentMoveTarget;
     }
+    private IEnumerator LookCoroutine(float duration)
+    {
+        Quaternion startRotation = Player.transform.rotation;
+        float elapsedTime = 0f;
 
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            Player.transform.rotation = Quaternion.Lerp(startRotation, Quaternion.LookRotation(currentMoveTarget), t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        // Ensure the player reaches the exact target position
+        Player.transform.rotation = Quaternion.LookRotation(currentMoveTarget);
+    }
+    */
     
 }

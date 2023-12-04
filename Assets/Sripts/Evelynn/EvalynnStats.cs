@@ -15,11 +15,11 @@ public class EvalynnStats : MonoBehaviour
     public Vector3 target;
     // public Vector3 currentRot;
     public GameObject player;
-    public Movement move;  // Declare the Movement variable at the class level
+    public Movement move;  
     public  Vector3 playerPos;
     public  Quaternion playerRot;
 
-
+    public bool isMoving = true;
     void Awake()
     {
         if (instance != null)
@@ -27,12 +27,11 @@ public class EvalynnStats : MonoBehaviour
             Debug.LogWarning("More than one instance of EvalynnStats found!");
             return;
         }
-
         instance = this;
     }
+
     void Start()
     {
-        
         //move = GetComponent<Movement>();
         if (move != null)
         {
@@ -44,6 +43,35 @@ public class EvalynnStats : MonoBehaviour
     }
 
     void Update()
+    {
+        lookAtTarget();
+       // moveToTarget();
+        /*
+            playerPos = transform.position;
+            playerRot = transform.rotation;
+            // Only update the target if currentMoveTarget changes
+            if (move != null)
+            {
+                UpdateTarget();
+            }
+
+            //set the new target position
+            float targetX = target.x;
+            float targetZ = target.z;
+            Vector3 targetPosition = new Vector3(targetX, transform.position.y, targetZ);
+
+            //look at and move to new directions
+            transform.LookAt(targetPosition);
+            if (isMoving == true)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            }
+        // Call the moveToPoint method if needed
+        //moveToPoint();
+        */
+    }
+
+    void lookAtTarget()
     {
         playerPos = transform.position;
         playerRot = transform.rotation;
@@ -57,14 +85,39 @@ public class EvalynnStats : MonoBehaviour
         float targetX = target.x;
         float targetZ = target.z;
         Vector3 targetPosition = new Vector3(targetX, transform.position.y, targetZ);
+        if (isMoving == true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            transform.LookAt(targetPosition);
+        }
+        //look at and move to new directions
+        
+    }
+    /*
+    void moveToTarget()
+    {
+        playerPos = transform.position;
+      //  playerRot = transform.rotation;
+        // Only update the target if currentMoveTarget changes
+        if (move != null)
+        {
+            UpdateTarget();
+        }
+
+        //set the new target position
+        float targetX = target.x;
+        float targetZ = target.z;
+        Vector3 targetPosition = new Vector3(targetX, transform.position.y, targetZ);
 
         //look at and move to new directions
-        transform.LookAt(targetPosition);
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+       // transform.LookAt(targetPosition);
+        if (isMoving == true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-        // Call the moveToPoint method if needed
-        //moveToPoint();
+        }
     }
+    */
 
     void UpdateTarget()
     {

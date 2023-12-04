@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1571668051529973880}
   - component: {fileID: 4766734403611709212}
   - component: {fileID: 4121351566828124596}
+  - component: {fileID: -3500218453377459641}
   m_Layer: 0
   m_Name: Hate Spike
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.67296, y: 0.67296, z: 1.2182595}
+  m_LocalScale: {x: 0.41383088, y: 0.23075125, z: 0.9686503}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,3 +106,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3500218453377459641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761982028350995832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ec398a7b030c349b95b8d935ebd1f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpikeSpeed: 20
+  deathsKissMarks: {fileID: 8371726543249563565, guid: f47d61d794f62214da75f0c3a18d5ac2,
+    type: 3}
