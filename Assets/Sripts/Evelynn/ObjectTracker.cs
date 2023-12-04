@@ -24,17 +24,24 @@ public class ObjectTracker : MonoBehaviour
         }
         instance = this;
     }
-    public void findNearestEnemy()
+
+    private void Start()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    }
+    public void findNearestEnemy()
+    {
+        
         for (int i = 0; i < enemies.Length; i++)
         {
             //check distance between player and enemy
             distance = Vector3.Distance(transform.position, enemies[i].transform.position);
-            if (distance < nearestEnemy)
+            if (distance <= nearestEnemy)
             {
                 nearestEnemyOBJ = enemies[i];
                 nearestEnemy = distance;
+                Debug.Log("distance checked");
+
             }
         }
 
