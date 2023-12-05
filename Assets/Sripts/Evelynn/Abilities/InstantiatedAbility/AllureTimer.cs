@@ -27,16 +27,20 @@ public class AllureTimer : MonoBehaviour
                     AllureReady = true;
                 }
             }
-        }
-        
+        }   
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (AllureReady == false)
+        if (collision.gameObject.tag == ("abilityDamage"))
         {
-            Allure.fillAmount = 0;
+            if (AllureReady == false)
+            {
+                Allure.fillAmount = 0;
+                
+            }
         }
+        
     }
 
 }

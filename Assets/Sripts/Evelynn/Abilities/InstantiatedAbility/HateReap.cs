@@ -18,6 +18,7 @@ public class HateReap : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().health = (10);
+            Debug.Log("enemy hit");
             
         }
         if (collision.gameObject.tag == "ReapPath")

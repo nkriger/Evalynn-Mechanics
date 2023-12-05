@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DeathsKissMarks : MonoBehaviour
 {
+    public float deathKissTimer;
+    public bool deathKissMark;
+    public int takenDamage;
     // Start is called before the first frame update
     void Start()
     {
