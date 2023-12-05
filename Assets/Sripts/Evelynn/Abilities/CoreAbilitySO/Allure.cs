@@ -1,46 +1,67 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.Pipes;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.UI;
 
 [CreateAssetMenu]
 public class Allure : AbilitySO
 {
     public GameObject AllurePrefab;
+    public GameObject[] enemies;
+    public GameObject highlightedPos;
 
-    
     public override void Activate()
     {
 
         Debug.Log("Allure");
+        
 
         if (AbilityParent.instance.WReady == true)
         {
-            AbilityParent.instance.wImage.fillAmount = 1;
-            // Update the target of the ability
-            UpdateTarget();
-            EvalynnStats.instance.isMoving = false;
-            AbilityTarget = Movement.instance.currentMoveTarget;
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-            lookAtTarget();  
-
-            // Instantiate the AllurePrefab at the player's position and rotation
-            Instantiate(AllurePrefab, playerPos, playerRot);
-            //GameObject Allure2 = Instantiate(AllureT2, playerPos, playerRot);
-
-            // If you want the Allure to move towards the AbilityTarget, you could add a Rigidbody component to the AllurePrefab and apply a force to it
-            Rigidbody rb = Allure.GetComponent<Rigidbody>();
-            //Rigidbody rb2 = Allure2.GetComponent<Rigidbody>();
-            if (rb != null)
+            if (enemies.Length > 0)
             {
-                Vector3 direction = (AbilityTarget - playerPos).normalized;
-                rb.AddForce(direction * AllureT2Timer, ForceMode.Impulse);
-                //rb2.AddForce(direction * AllureT2Timer, ForceMode.Impulse);
+                foreach (GameObject enemy in enemies)
+                {
+                    Enemy enemyScript = enemy.GetComponent<Enemy>();
+                    if (enemyScript != null)
+                    {
+                        //check if highlighted
+                        if (enemyScript.highlighted == true)
+                        {
+                            
+                            //highlightedPos = highlightedEnemy.transform.position;
+
+                            AbilityParent.instance.wImage.fillAmount = 1;
+
+                            // Update the target of the ability
+                            UpdateTarget();
+                            EvalynnStats.instance.isMoving = false;
+
+                            lookAtTarget();
+                            Instantiate(AllurePrefab, enemy.transform.position, enemy.transform.rotation, enemy.transform);
+                            Debug.Log("Instantiates Allure");
+
+                            EvalynnStats.instance.isMoving = true;
+                            AbilityParent.instance.WReady = false;
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("Target Not found");
+                    }
+                }
             }
-            EvalynnStats.instance.isMoving = true;
-            AbilityParent.instance.WReady = false;
-            Debug.Log("Allure");
+            else
+            {
+                Debug.Log("no enemies detected");
+            }
+            
+            
         }
         else
         {
