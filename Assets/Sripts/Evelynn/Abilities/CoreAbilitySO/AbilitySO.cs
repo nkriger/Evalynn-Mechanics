@@ -15,7 +15,7 @@ public class AbilitySO : ScriptableObject
     public Vector3 playerPos;
     public Quaternion playerRot;
 
-    public Movement move;
+    //public Movement move;
     public Vector3 AbilityTarget;
     public KeyCode abilityKey;
     //public playerPos tracker;

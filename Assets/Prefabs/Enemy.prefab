@@ -161,6 +161,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: {fileID: 9138956513902525085}
   Player: {fileID: 0}
+  highlighted: 0
+  health: 0
 --- !u!54 &-6026789168448739721
 Rigidbody:
   m_ObjectHideFlags: 0

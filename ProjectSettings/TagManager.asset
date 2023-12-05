@@ -7,6 +7,7 @@ TagManager:
   - projectile
   - Enemy
   - ReapPath
+  - Qrange
   layers:
   - Default
   - TransparentFX

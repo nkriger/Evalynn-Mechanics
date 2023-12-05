@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a28173f5b1dd544d983047fe31e2e56, type: 3}
-  m_Name: Allure
+  m_Name: New Allure
   m_EditorClassIdentifier: 
   AbilityName: Allure
-  activeTime: 3
-  castTime: 0.2
-  playerPos: {x: 0.553416, y: 2.99, z: -12.953504}
-  playerRot: {x: 0, y: 0.94091165, z: 0, w: 0.33865213}
+  activeTime: 0
+  castTime: 0
+  playerPos: {x: 0, y: 0, z: 0}
+  playerRot: {x: 0, y: 0, z: 0, w: 0}
   AbilityTarget: {x: 0, y: 0, z: 0}
-  abilityKey: 119
+  abilityKey: 0
   AllureT2Timer: 0
   AllureT1: {fileID: 0}
   AllureT2: {fileID: 0}
   AllureTarget: {fileID: 0}
+  AllureImage: {fileID: 0}

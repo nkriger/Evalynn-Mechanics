@@ -32,4 +32,12 @@ public class HSpikeMovement : MonoBehaviour
             
          }
     }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Qrange")
+        {
+            gameObject.SetActive(false);
+            Debug.Log("Out of range");
+        }
+    }
 }

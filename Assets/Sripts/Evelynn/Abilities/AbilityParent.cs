@@ -33,6 +33,8 @@ public class AbilityParent : MonoBehaviour
     public float RCooldown;
     public Image rImage;
 
+    public Image Allure;
+
     float qCD;
     float wCD;
     float eCD;
