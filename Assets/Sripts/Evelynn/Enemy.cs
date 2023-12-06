@@ -57,4 +57,18 @@ public class Enemy : MonoBehaviour
             Highlighted.SetActive(false);
         }
     }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+
+
+        }
+    }
+
+    public void lostHealth()
+    {
+
+    }
 }

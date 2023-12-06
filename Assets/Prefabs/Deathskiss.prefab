@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 2716764344779270545}
   - component: {fileID: 859099005040063257}
   m_Layer: 0
-  m_Name: DeathsSkiss
+  m_Name: Deathskiss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,6 +257,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e030754818f804b85429c4c403e623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathKissList:
+  - {fileID: 8417937770744358311}
+  - {fileID: 8240824606574354070}
+  - {fileID: 1753371494519776518}
+  DeathKissParent: {fileID: 8371726543249563565}
+  deathKissTimer: 0
+  deathKissMark: 0
+  currentHp: 0
+  takenDamage: 0
 --- !u!1 &8417937770744358311
 GameObject:
   m_ObjectHideFlags: 0
