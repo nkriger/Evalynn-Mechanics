@@ -6,6 +6,10 @@ using UnityEngine;
 public class HateReap : MonoBehaviour
 {
     public GameObject slash;
+    public int reapDamage;
+    public bool hasHit;
+
+    
 
     // Update is called once per frame
     void Update()
@@ -13,11 +17,18 @@ public class HateReap : MonoBehaviour
         transform.Translate(Vector3.forward * 30 * Time.deltaTime);
     }
 
+
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<Enemy>().health = (10);
+            if (!hasHit)
+            {
+                hasHit = true;
+                collision.gameObject.GetComponent<Enemy>().health = collision.gameObject.GetComponent<Enemy>().health - reapDamage;
+            }
+            
             Debug.Log("enemy hit");
             
         }

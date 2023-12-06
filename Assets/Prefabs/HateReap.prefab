@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slash: {fileID: 8125780184994810741}
+  reapDamage: 76
 --- !u!1 &8125780184994810741
 GameObject:
   m_ObjectHideFlags: 0

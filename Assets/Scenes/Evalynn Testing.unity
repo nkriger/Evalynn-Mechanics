@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17427137, g: 0.21794069, b: 0.3001566, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3082,7 +3082,7 @@ GameObject:
   - component: {fileID: 1367256488}
   - component: {fileID: 1367256490}
   - component: {fileID: 1367256489}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FindNearestEnemy
   m_TagString: Qrange
   m_Icon: {fileID: 0}
@@ -3098,8 +3098,8 @@ Transform:
   m_GameObject: {fileID: 1367256487}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.16087, y: 11.16087, z: 11.16087}
+  m_LocalPosition: {x: 0, y: -0.00000023842, z: 0}
+  m_LocalScale: {x: 8.692194, y: 8.692194, z: 8.692194}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1088897000}
