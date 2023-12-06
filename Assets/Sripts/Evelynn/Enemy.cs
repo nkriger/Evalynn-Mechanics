@@ -8,8 +8,10 @@ public class Enemy : MonoBehaviour
     public GameObject Highlighted;
     public GameObject Player;
     public bool highlighted;
-
+    public int speed;
     public int health;
+
+    public GameObject CharmedTarget;
 
     private void Awake()
     {

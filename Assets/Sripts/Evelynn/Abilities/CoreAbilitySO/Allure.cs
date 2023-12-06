@@ -13,6 +13,8 @@ public class Allure : AbilitySO
     public GameObject[] enemies;
     public GameObject highlightedPos;
 
+    public int currentHp;
+
     public override void Activate()
     {
 
