@@ -2611,6 +2611,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937642956}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &959144099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3600713045010258410, guid: 4e36100a7e3ec9f4cbfdc6686169df07,
+    type: 3}
+  m_PrefabInstance: {fileID: 1005255022443945634}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1039857218
 GameObject:
   m_ObjectHideFlags: 0
@@ -4250,6 +4256,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7204324591026245207, guid: 4e36100a7e3ec9f4cbfdc6686169df07,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7938921836861053138, guid: 4e36100a7e3ec9f4cbfdc6686169df07,
         type: 3}
       propertyPath: Player
@@ -4260,6 +4271,11 @@ PrefabInstance:
       propertyPath: health
       value: 480
       objectReference: {fileID: 0}
+    - target: {fileID: 7938921836861053138, guid: 4e36100a7e3ec9f4cbfdc6686169df07,
+        type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 959144099}
     - target: {fileID: 8386888527217717582, guid: 4e36100a7e3ec9f4cbfdc6686169df07,
         type: 3}
       propertyPath: m_LocalPosition.x
