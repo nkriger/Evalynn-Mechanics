@@ -6,6 +6,7 @@ MonoImporter:
   defaultReferences:
   - deathsKissMarks: {fileID: 8371726543249563565, guid: f47d61d794f62214da75f0c3a18d5ac2,
       type: 3}
+  - hateSike: {fileID: 11400000, guid: 27084cf91c72b854b8da3a83c365fbde, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

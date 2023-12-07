@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8d5971e23c04d154697e3f6d5341204a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - leftSlash: {fileID: 7930717788523768867, guid: 3167369d9aaad8848be1d8f81c2f98d8,
+      type: 3}
+  - rightSlash: {fileID: 9041587760480515977, guid: 627f4622fea2ebb4791c624a1a3b23b6,
+      type: 3}
+  - deathsEmbrace: {fileID: 11400000, guid: 127685b0cafa5184099c6c977b511a57, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

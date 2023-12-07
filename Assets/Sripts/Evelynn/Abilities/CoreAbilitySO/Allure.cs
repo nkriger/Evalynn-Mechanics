@@ -12,6 +12,7 @@ public class Allure : AbilitySO
     public GameObject AllurePrefab;
     public GameObject[] enemies;
     public GameObject highlightedPos;
+    public GameObject Evalyn;
 
     public int currentHp;
 
@@ -24,7 +25,7 @@ public class Allure : AbilitySO
         if (AbilityParent.instance.WReady == true)
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
+            GameObject Evalyn = GameObject.FindGameObjectWithTag("Player");
             if (enemies.Length > 0)
             {
                 foreach (GameObject enemy in enemies)
@@ -35,7 +36,6 @@ public class Allure : AbilitySO
                         //check if highlighted
                         if (enemyScript.highlighted == true)
                         {
-                            
                             //highlightedPos = highlightedEnemy.transform.position;
 
                             AbilityParent.instance.wImage.fillAmount = 1;
@@ -47,7 +47,7 @@ public class Allure : AbilitySO
                             lookAtTarget();
                             Instantiate(AllurePrefab, enemy.transform.position, enemy.transform.rotation, enemy.transform);
                             Debug.Log("Instantiates Allure");
-
+                            
                             EvalynnStats.instance.isMoving = true;
                             AbilityParent.instance.WReady = false;
                         }

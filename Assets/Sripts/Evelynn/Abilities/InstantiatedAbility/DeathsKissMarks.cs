@@ -12,6 +12,7 @@ public class DeathsKissMarks : MonoBehaviour
     public bool deathKissMark;
     public int currentHp;
     public int takenDamage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class DeathsKissMarks : MonoBehaviour
     void Update()
     {
         markProcCheck();
+        timer();
     }
 
     public void markProcCheck()
@@ -33,7 +35,7 @@ public class DeathsKissMarks : MonoBehaviour
             currentHp = GetComponentInParent<Enemy>().health;
             if (previousHp > currentHp)
             {
-                GetComponentInParent<Enemy>().health = currentHp - 30;
+                GetComponentInParent<Enemy>().health -= 30;
                 previousHp = currentHp;
                 if (DeathKissList.Count > 0)
                 {
@@ -42,11 +44,23 @@ public class DeathsKissMarks : MonoBehaviour
                 }
             }
         }
-        /*
-        if (DeathKissList.Count == 0)
+    }
+
+    public void timer()
+    {
+        if (deathKissMark == true)
         {
-            Destroy(DeathKissParent);
+            if (deathKissTimer > 0)
+            {
+                deathKissTimer -= Time.deltaTime;
+                if (deathKissTimer <= 0)
+                {
+                    deathKissMark = false;
+                    //deathKissTimer = 5;
+                    Destroy(gameObject);
+                }
+               
+            }
         }
-        */
     }
 }

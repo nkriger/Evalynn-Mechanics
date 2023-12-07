@@ -15,10 +15,10 @@ MonoBehaviour:
   AbilityName: Hate Spike
   activeTime: 4
   castTime: 430
-  playerPos: {x: 4.353751, y: 2.99, z: -7.5023556}
-  playerRot: {x: 0, y: -0.7986252, z: 0, w: 0.60182875}
-  move: {fileID: 0}
-  AbilityTarget: {x: 2.8065016, y: 1.7132411, z: 1.3837166}
+  playerPos: {x: 4.095207, y: 2.99, z: -4.0285773}
+  playerRot: {x: 0, y: 0.6299607, z: 0, w: 0.776627}
+  damage: 35
+  AbilityTarget: {x: 2.9996226, y: 1.7132411, z: 0.637558}
   abilityKey: 113
   hateReap: {fileID: 8125780184994810741, guid: 46ab32ab18ca00841b2b3642bb4a9e76,
     type: 3}
@@ -26,6 +26,5 @@ MonoBehaviour:
   SpikePrefab: {fileID: 1761982028350995832, guid: 090d181a067535a4e83c6573c1064b16,
     type: 3}
   castRange: 0
-  damage: 0
   cooldownTime: 5
   HateReap: 0

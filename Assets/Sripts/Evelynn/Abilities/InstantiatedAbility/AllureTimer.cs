@@ -8,10 +8,13 @@ public class AllureTimer : MonoBehaviour
     public Image Allure;
     public Image AllureProcH;
 
+    public Allure allure;
     public GameObject Evalyn;
 
     public bool AllureActive;
     public bool AllureReady;
+    bool AllureCharmed = false;
+
 
     public float AllureTime;
 
@@ -36,7 +39,9 @@ public class AllureTimer : MonoBehaviour
                     AllureReady = true;
                 }
             }
-        }   
+        }
+
+        AllureProc();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -46,20 +51,16 @@ public class AllureTimer : MonoBehaviour
             if (AllureReady == false)
             {
                 Allure.fillAmount = 0;
-                
             }
         }
-        
     }
     private void AllureProc()
     {
         int previousHp = currentHp;
-       
         
         currentHp = GetComponentInParent<Enemy>().health;
         if (previousHp > currentHp)
         {
-            
             if (!AllureReady)
             {
                 GetComponentInParent<Enemy>().speed = GetComponentInParent<Enemy>().speed - 5;
@@ -68,12 +69,27 @@ public class AllureTimer : MonoBehaviour
             }
             else
             {
-                GetComponentInParent<Enemy>().health = GetComponentInParent<Enemy>().health - 140;
-                AllureProcH.fillAmount = 1;
-                GetComponentInParent<Enemy>().CharmedTarget = Evalyn;
-                
+                if (!AllureCharmed)
+                {
+                    GetComponentInParent<Enemy>().health -= allure.damage;
+                    AllureCharmed = true;
+                    AllureProcH.fillAmount = 1;
+                    GetComponentInParent<Enemy>().CharmedTarget = Evalyn.gameObject;
+                    GetComponentInParent<Enemy>().Charmed();
+                    
+                }
             }
         }
-       
+        if (AllureProcH.fillAmount == 1)
+        {
+            StartCoroutine(AllureProcHTimer());
+        }
+    }
+
+    IEnumerator AllureProcHTimer()
+    {
+        yield return new WaitForSeconds(2);
+
+        Destroy(gameObject);
     }
 }

@@ -18,7 +18,12 @@ public class EvalynnStats : MonoBehaviour
     public Movement move;  
     public  Vector3 playerPos;
     public  Quaternion playerRot;
+   
+    public Vector3 targetToDash;
+    public GameObject targetedEnemy;
+    public Whiplash whiplash;
 
+    public bool isDashing;
     public bool isMoving = true;
     void Awake()
     {
@@ -45,30 +50,8 @@ public class EvalynnStats : MonoBehaviour
     void Update()
     {
         lookAtTarget();
-       // moveToTarget();
-        /*
-            playerPos = transform.position;
-            playerRot = transform.rotation;
-            // Only update the target if currentMoveTarget changes
-            if (move != null)
-            {
-                UpdateTarget();
-            }
-
-            //set the new target position
-            float targetX = target.x;
-            float targetZ = target.z;
-            Vector3 targetPosition = new Vector3(targetX, transform.position.y, targetZ);
-
-            //look at and move to new directions
-            transform.LookAt(targetPosition);
-            if (isMoving == true)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-            }
-        // Call the moveToPoint method if needed
-        //moveToPoint();
-        */
+        WhipDash();
+       
     }
 
     void lookAtTarget()
@@ -91,38 +74,29 @@ public class EvalynnStats : MonoBehaviour
             transform.LookAt(targetPosition);
         }
         //look at and move to new directions
-        
     }
-    /*
-    void moveToTarget()
-    {
-        playerPos = transform.position;
-      //  playerRot = transform.rotation;
-        // Only update the target if currentMoveTarget changes
-        if (move != null)
-        {
-            UpdateTarget();
-        }
-
-        //set the new target position
-        float targetX = target.x;
-        float targetZ = target.z;
-        Vector3 targetPosition = new Vector3(targetX, transform.position.y, targetZ);
-
-        //look at and move to new directions
-       // transform.LookAt(targetPosition);
-        if (isMoving == true)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-
-        }
-    }
-    */
 
     void UpdateTarget()
     {
         //Update the target to always match currentMoveTarget
         target = move.currentMoveTarget;
+    }
+
+    public void WhipDash()
+    {
+        if (isDashing == true)
+        {
+            //transform.LookAt(WhiplashPrefab.transform.position);
+            player.transform.position = Vector3.MoveTowards(player.transform.position, targetToDash, 15 * Time.deltaTime);
+            if (player.transform.position == targetToDash)
+            {
+                
+                AbilityParent.instance.EReady = false;
+                isDashing = false;
+                isMoving = true;                
+            }
+        }
+
     }
 }
 

@@ -31,7 +31,6 @@ public class ObjectTracker : MonoBehaviour
     }
     public void findNearestEnemy()
     {
-        
         for (int i = 0; i < enemies.Length; i++)
         {
             //check distance between player and enemy
@@ -44,6 +43,5 @@ public class ObjectTracker : MonoBehaviour
 
             }
         }
-
     }
 }

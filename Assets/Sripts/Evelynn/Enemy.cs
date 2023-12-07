@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -9,9 +10,34 @@ public class Enemy : MonoBehaviour
     public GameObject Player;
     public bool highlighted;
     public int speed;
+    public int maxHealth;
     public int health;
+    public float percentHealth;
+    public float charmTimer = 2.5f;
+    public GameObject slider;
+
+    public bool isCharmed;
 
     public GameObject CharmedTarget;
+
+    private void Start()
+    {
+        health = maxHealth;
+        
+    }
+    private void Update()
+    {
+
+        percentHealth = (health / maxHealth) * 100;
+        slider.GetComponent<Slider>().value = percentHealth;
+
+        if (isCharmed == true)
+        {
+            CharmedTarget = Player;
+            transform.position = Vector3.MoveTowards(transform.position, CharmedTarget.transform.position, speed * Time.deltaTime);
+        }
+        
+    }
 
     private void Awake()
     {
@@ -46,7 +72,7 @@ public class Enemy : MonoBehaviour
             
         }
     }
-   
+    
 
     void highlight()
     {
@@ -64,13 +90,22 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-
+            Charmed();
 
         }
     }
 
-    public void lostHealth()
+    public void Charmed()
     {
-
+        isCharmed = true;
+        //max verstapin this code like he did for lewis hamilton in the 2021 spanish grand prix
+        if (isCharmed == true)
+        {
+            charmTimer = 2.5f;
+            if (charmTimer > 0)
+            {
+                charmTimer -= 1 / Time.deltaTime;
+            }
+        }
     }
 }

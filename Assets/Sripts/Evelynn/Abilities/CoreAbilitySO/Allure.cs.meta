@@ -3,7 +3,11 @@ guid: 1a28173f5b1dd544d983047fe31e2e56
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - AllurePrefab: {fileID: 7438243501041914568, guid: 97622783e4397a845a9ead39d3db93f4,
+      type: 3}
+  - highlightedPos: {instanceID: 0}
+  - Evalyn: {fileID: 810807698773857131, guid: 4e36100a7e3ec9f4cbfdc6686169df07, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

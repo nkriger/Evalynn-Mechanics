@@ -29,7 +29,6 @@ public class Movement : MonoBehaviour
         currentMoveTarget = transform.position;
         instance = this;
     }
-    
 
     // Update is called once per frame
     void Update()
@@ -42,6 +41,7 @@ public class Movement : MonoBehaviour
     {
         //moveToTarget();
     }
+
     private void mouseTracking()
     {
         mousePos = Mouse.current.position.ReadValue();
@@ -72,42 +72,6 @@ public class Movement : MonoBehaviour
            
         }
     }
-    /*
-    public void MovePlayerToTarget(float duration)
-    {
-        StartCoroutine(MoveCoroutine(duration));
-    }
-
-    private IEnumerator MoveCoroutine(float duration)
-    {
-        Vector3 startPosition = Player.transform.position;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < duration)
-        {
-            float t = elapsedTime / duration;
-            Player.transform.position = Vector3.Lerp(startPosition, currentMoveTarget, t);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        // Ensure the player reaches the exact target position
-        Player.transform.position = currentMoveTarget;
-    }
-    private IEnumerator LookCoroutine(float duration)
-    {
-        Quaternion startRotation = Player.transform.rotation;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < duration)
-        {
-            float t = elapsedTime / duration;
-            Player.transform.rotation = Quaternion.Lerp(startRotation, Quaternion.LookRotation(currentMoveTarget), t);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        // Ensure the player reaches the exact target position
-        Player.transform.rotation = Quaternion.LookRotation(currentMoveTarget);
-    }
-    */
+    
     
 }

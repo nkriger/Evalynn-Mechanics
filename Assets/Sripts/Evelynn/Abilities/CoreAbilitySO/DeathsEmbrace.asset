@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa33883d49ece2b49bb0829751c43142, type: 3}
+  m_Name: DeathsEmbrace
+  m_EditorClassIdentifier: 
+  AbilityName: Deaths Embrace
+  activeTime: 0
+  castTime: 0
+  playerPos: {x: 1.527987, y: 2.99, z: -8.209318}
+  playerRot: {x: 0, y: 0.021583633, z: 0, w: 0.99976707}
+  damage: 250
+  AbilityTarget: {x: 1.8546479, y: 1.7132411, z: -0.64727974}
+  abilityKey: 114
+  slashingEmbrace: {fileID: 5550813448865192734, guid: 8fbd25d2bc8933946b511cdd27a0c4b2,
+    type: 3}

@@ -12,7 +12,7 @@ public class HateSpike : AbilitySO
     public float SpikeSpeed;
     public GameObject SpikePrefab;
     public float castRange;
-    public int damage;
+    //public int damage;
     //public bool isOnCooldown;
     public int cooldownTime;
     public int HateReap;
@@ -35,16 +35,18 @@ public class HateSpike : AbilitySO
             // Instantiate the SpikePrefab at the player's position and rotation
 
             GameObject spike = Instantiate(SpikePrefab, playerPos, playerRot);
-
+            /*
             Rigidbody rb = spike.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 Vector3 direction = (AbilityTarget - playerPos).normalized;
                 rb.AddForce(direction * SpikeSpeed, ForceMode.Impulse);
             }
+            */
             EvalynnStats.instance.isMoving = true;
             HateReap = 3;
             Debug.Log("Hate Spike");
+
         }
         else
         {

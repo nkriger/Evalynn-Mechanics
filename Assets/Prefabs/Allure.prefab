@@ -237,7 +237,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2421398894548777224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,7 +269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Allure: {fileID: 3803888997041856265}
   AllureProcH: {fileID: 8443781581397159403}
-  Evalyn: {fileID: 0}
+  allure: {fileID: 11400000, guid: 3bbacf47378386941aa002645941cd8d, type: 2}
+  Evalyn: {fileID: 7769979832753180352, guid: 53f9c6ac3d9053e42a4615ca5aa05a55, type: 3}
   AllureActive: 1
   AllureReady: 0
   AllureTime: 2.8

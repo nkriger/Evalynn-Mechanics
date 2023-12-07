@@ -10,15 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a28173f5b1dd544d983047fe31e2e56, type: 3}
-  m_Name: New Allure
+  m_Name: Allure
   m_EditorClassIdentifier: 
   AbilityName: Allure
   activeTime: 0
   castTime: 0
-  playerPos: {x: 1.0647733, y: 2.99, z: -6.9764185}
-  playerRot: {x: 0, y: 0.9239339, z: 0, w: 0.3825521}
-  AbilityTarget: {x: 1.9647071, y: 1.7132411, z: 2.0213642}
+  playerPos: {x: 4.095207, y: 2.99, z: -4.0285773}
+  playerRot: {x: 0, y: 0.6299607, z: 0, w: 0.776627}
+  damage: 238
+  AbilityTarget: {x: 2.5107782, y: 1.7132411, z: 0.3853941}
   abilityKey: 119
   AllurePrefab: {fileID: 7438243501041914568, guid: 97622783e4397a845a9ead39d3db93f4,
     type: 3}
   enemies: []
+  highlightedPos: {fileID: 0}
+  Evalyn: {fileID: 0}
+  currentHp: 0
